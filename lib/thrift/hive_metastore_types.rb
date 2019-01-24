@@ -265,7 +265,7 @@ class SerDeInfo
   ::Thrift::Struct.generate_accessors self
 end
 
-class Order
+class HiveOrder
   include ::Thrift::Struct, ::Thrift::Struct_Union
   COL = 1
   ORDER = 2
@@ -305,7 +305,7 @@ class StorageDescriptor
     NUMBUCKETS => {:type => ::Thrift::Types::I32, :name => 'numBuckets'},
     SERDEINFO => {:type => ::Thrift::Types::STRUCT, :name => 'serdeInfo', :class => ::SerDeInfo},
     BUCKETCOLS => {:type => ::Thrift::Types::LIST, :name => 'bucketCols', :element => {:type => ::Thrift::Types::STRING}},
-    SORTCOLS => {:type => ::Thrift::Types::LIST, :name => 'sortCols', :element => {:type => ::Thrift::Types::STRUCT, :class => ::Order}},
+    SORTCOLS => {:type => ::Thrift::Types::LIST, :name => 'sortCols', :element => {:type => ::Thrift::Types::STRUCT, :class => ::HiveOrder}},
     PARAMETERS => {:type => ::Thrift::Types::MAP, :name => 'parameters', :key => {:type => ::Thrift::Types::STRING}, :value => {:type => ::Thrift::Types::STRING}}
   }
 
