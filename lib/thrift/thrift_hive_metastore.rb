@@ -9,7 +9,7 @@ require_relative 'facebook_service'
 require_relative 'hive_metastore_types'
 
 module ThriftHiveMetastore
-  class Client < ::FacebookService::Client 
+  class Client < ::FacebookService::Client
     include ::Thrift::Client
 
     def create_database(database)
@@ -959,7 +959,7 @@ module ThriftHiveMetastore
 
   end
 
-  class Processor < ::FacebookService::Processor 
+  class Processor < ::FacebookService::Processor
     include ::Thrift::Processor
 
     def process_create_database(seqid, iprot, oprot)
@@ -3343,7 +3343,7 @@ module ThriftHiveMetastore
     ROLE = 1
 
     FIELDS = {
-      ROLE => {:type => ::Thrift::Types::STRUCT, :name => 'role', :class => ::Role}
+      ROLE => {:type => ::Thrift::Types::STRUCT, :name => 'role', :class => ::HiveRole}
     }
 
     def struct_fields; FIELDS; end
@@ -3557,7 +3557,7 @@ module ThriftHiveMetastore
     O1 = 1
 
     FIELDS = {
-      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::Role}},
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::HiveRole}},
       O1 => {:type => ::Thrift::Types::STRUCT, :name => 'o1', :class => ::MetaException}
     }
 
